@@ -3,9 +3,10 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 
-const productRouter = require('./routes/productRoutes');
-const categoryRouter = require('./routes/categoryRoutes');
 const userRouter = require('./routes/userRoutes');
+const categoryRouter = require('./routes/categoryRoutes');
+const productRouter = require('./routes/productRoutes');
+const reviewRouter = require('./routes/reviewRoutes');
 
 const globalErrorHandler = require('./controllers/errorController');
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
+app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/category', categoryRouter);
 
 app.use(globalErrorHandler);
