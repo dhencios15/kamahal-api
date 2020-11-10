@@ -48,7 +48,7 @@ reviewSchema.statics.getRating = async function (productId) {
       },
     },
   ]);
-  console.log(obj);
+
   try {
     await this.model('Product').findByIdAndUpdate(productId, {
       averageRating: obj[0].averageRating,
