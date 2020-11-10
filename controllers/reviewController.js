@@ -24,8 +24,6 @@ exports.getReview = asyncHandler(async (req, res, next) => {
     select: 'name email',
   });
 
-  console.log(productReviews);
-
   if (!productReviews) return next(new AppError('No Review Found!', 404));
 
   res.status(200).json({
@@ -42,8 +40,8 @@ exports.createReview = asyncHandler(async (req, res, next) => {
 
   const isReview = await Review.findOne({
     productId: req.params.productId,
-    userId: req.body.userId,
-    // userId: req.user._id,
+    // userId: req.body.userId,
+    userId: req.user._id,
   });
 
   if (isReview) return next(new AppError('Already Reviewed!', 409));
@@ -51,8 +49,8 @@ exports.createReview = asyncHandler(async (req, res, next) => {
   const review = await Review.create({
     ...req.body,
     productId: req.params.productId,
-    userId: req.body.userId,
-    // userId: req.user._id,
+    // userId: req.body.userId,
+    userId: req.user._id,
   });
 
   res.status(201).json({ status: 'success', data: review });
