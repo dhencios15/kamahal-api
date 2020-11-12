@@ -2,11 +2,9 @@
 
 ![Image of Website](https://i.ibb.co/6Pj0cxX/website.jpg)
 
-### CLIENT REPO:
-
-[CLIENT LINK](https://github.com/dhencios15/k-commerce)
-
 # Stack Used:
+
+[CLIENT REPO: https://github.com/dhencios15/k-commerce](https://github.com/dhencios15/k-commerce)
 
 ### FRONT
 
