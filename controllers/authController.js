@@ -30,6 +30,7 @@ exports.login = asyncHandler(async (req, res, next) => {
 
   createSendToken(user, 200, res);
 });
+
 exports.protect = asyncHandler(async (req, res, next) => {
   // 1) Getting token and check of it's there
   let token;

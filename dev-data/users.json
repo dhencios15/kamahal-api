@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Maria",
+    "email": "maria15@gmail.com",
+    "password": "123123123"
+  },
+  {
+    "name": "Dawn",
+    "email": "dawn@gmail.com",
+    "password": "123123123"
+  },
+  {
+    "name": "Cataleya",
+    "email": "Cataleya@gmail.com",
+    "password": "123123123"
+  },
+  {
+    "name": "Johnson",
+    "email": "Johnson@gmail.com",
+    "password": "123123123"
+  },
+  {
+    "name": "Mae Charl",
+    "email": "Charl@gmail.com",
+    "password": "123123123"
+  },
+  {
+    "name": "Don Denn",
+    "email": "Denn@gmail.com",
+    "password": "123123123"
+  }
+]
