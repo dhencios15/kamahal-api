@@ -4,7 +4,6 @@ const AppError = require('../utils/appError');
 
 exports.getAllProducts = asyncHandler(async (req, res) => {
   const allProducts = await Product.find();
-
   res.status(200).json({
     status: 'success',
     totalResult: allProducts.length,

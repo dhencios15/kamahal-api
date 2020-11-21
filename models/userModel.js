@@ -2,6 +2,18 @@ const { Schema, model } = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 
+// const favoriteSchema = newSchema({
+//   productName: {
+//     type: String,
+//     required: [true, 'Please add a product name'],
+//   },
+//   productId: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'Product',
+//     required: true,
+//   },
+// });
+
 const userSchema = new Schema({
   name: {
     type: String,
@@ -36,11 +48,27 @@ const userSchema = new Schema({
     default: true,
     select: false,
   },
+  favorites: [
+    {
+      productId: {
+        type: Schema.ObjectId,
+        ref: 'Product',
+      },
+    },
+  ],
 });
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 12);
+  next();
+});
+
+userSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'favorites.productId',
+    select: 'name imageCover',
+  });
   next();
 });
 

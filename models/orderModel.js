@@ -4,9 +4,12 @@ const orderSchema = new Schema({
   orderItems: [
     {
       productItem: {
-        type: Schema.ObjectId,
-        ref: 'Product',
+        type: String,
         required: [true, 'Order must have a Product'],
+      },
+      image: {
+        type: String,
+        required: [true, 'Product must have a photo'],
       },
       qty: {
         type: Number,
